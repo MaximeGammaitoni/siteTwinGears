@@ -65,7 +65,7 @@ function init(){
 	var isLoaded = 1;
 	var imgElts = document.getElementsByTagName("img");
 	console.log(imgElts[0]);
-	/*for(i=0; i < imgElts.length; i++){
+	for(i=0; i < imgElts.length; i++){
 		console.log(imgElts[i]);
 		window.addEventListener("load", function(){
 			console.log(isLoaded);
@@ -73,15 +73,13 @@ function init(){
 		});
 	}
 
-	if(isLoaded === imgElts.length){
+	if(isLoaded === imgElts.length-1){
 		console.log("loaded");
-		document.getElementById("loader").style.display = none;
-	}*/
-
-	document.getElementById("gear-icon-1").addEventListener("load", onload)
-}
-function onload(){
-		console.log("loaded");
+		document.getElementById("loader").style.display = "none";
 	}
+
+	
+}
+
 
 init();
