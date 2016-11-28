@@ -28,7 +28,12 @@
             <p class="browserupgrade">Vous utilisez un navigateur <strong>dépassé</strong>. S'il vous plaît <a href="http://browsehappy.com/">mettez à jour votre navigateur</a> afin d'améliorer votre expérience.</p>
         <![endif]-->
 
-		<div id="canvas"></div>
+        <div id="loader">
+            <img src="assets/img/gear.png" id="gear-icon-1" height="150px" width="150px" onload>
+            <img src="assets/img/gear.png" id="gear-icon-2" height="150px" width="150px" onload>
+        </div>
+
+
 
 
 		<script src="utils/phaser.js"></script>
@@ -42,6 +47,7 @@
             e.src='https://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+
         </script>
     </body>
 </html>

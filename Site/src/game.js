@@ -1,4 +1,4 @@
-//*Variable Global
+/*Variable Global
 var game;
 window.onload =init()
 function init()
@@ -12,7 +12,7 @@ function init()
 		var width=window.innerWidth;
 		game.width = width;
 		game.height = height;
-	});*/
+	});
 
 	//PUBLIC SPRITE
 	
@@ -59,4 +59,29 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 		image.height =window.innerHeight*screenRatioY;
 	}
 }
+*/
 
+function init(){
+	var isLoaded = 1;
+	var imgElts = document.getElementsByTagName("img");
+
+	/*for(i=0; i < imgElts.length; i++){
+		console.log(imgElts[i]);
+		window.addEventListener("load", function(){
+			console.log(isLoaded);
+			isLoaded++;
+		});
+	}
+
+	if(isLoaded === imgElts.length){
+		console.log("loaded");
+		document.getElementById("loader").style.display = none;
+	}*/
+
+	document.getElementById("gear-icon-1").addEventListener("load", onload)
+}
+function onload(){
+		console.log("loaded");
+	}
+
+init();
