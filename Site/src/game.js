@@ -64,7 +64,7 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 function init(){
 	var isLoaded = 1;
 	var imgElts = document.getElementsByTagName("img");
-
+	console.log(imgElts[0]);
 	/*for(i=0; i < imgElts.length; i++){
 		console.log(imgElts[i]);
 		window.addEventListener("load", function(){
