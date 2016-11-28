@@ -61,25 +61,28 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 }
 */
 
-function init(){
-	var isLoaded = 1;
-	var imgElts = document.getElementsByTagName("img");
-	console.log(imgElts[0]);
+
+function preload(){
+	
+	var isLoaded = 0;
+	var imgElts = document.querySelectorAll("#container img");
+	console.log("NOMBRE D IMAGE: " + imgElts.length);
 	for(i=0; i < imgElts.length; i++){
-		console.log(imgElts[i]);
-		window.addEventListener("load", function(){
-			console.log(isLoaded);
+		imgElts[i].addEventListener("load", function(){
 			isLoaded++;
+			console.log("IMAGE CHARGEE : " + isLoaded)
+			if(isLoaded ==imgElts.length){
+				console.log("loaded");
+				init()
+			}
 		});
+			
 	}
-
-	if(isLoaded === imgElts.length-1){
-		console.log("loaded");
-		document.getElementById("loader").style.display = "none";
-	}
-
 	
 }
+function init()
+{
 
+}
 
-init();
+preload();
