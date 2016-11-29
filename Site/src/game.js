@@ -63,10 +63,11 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 //VAR GLOBAL
 
 var AssetsLoader = function() {
-  	this.tru = true;
+  	this.gearElt1 = $("#gear-icon-1");
+	this.gearElt2 = $("#gear-icon-2");
 };
 
-var AssetsLoaded = false;
+var assetsLoaded = false;
 var assetsLoader = new AssetsLoader();
 $.fn.animateRotate = function(angle, duration, easing, complete) {
   return this.each(function() {
@@ -78,7 +79,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
       canRotate : true,
 
       step: function(now) {
-        if(!AssetsLoaded)
+        if(!assetsLoaded)
         	$elem.css({
           		transform: 'rotate(' + now*5 + 'deg)'
          	});
@@ -92,16 +93,10 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
   });
 };
 function roundingGear(){
-	AssetsLoader.gearElt1 = $("#gear-icon-1");
-	AssetsLoader.gearElt2 = $("#gear-icon-2");
-
  	var $elem = $('#gear-icon-1');
  	var angle = 360;
-   	AssetsLoader.gearElt1.animateRotate(360,40000,"linear");
-   	AssetsLoader.gearElt2.animateRotate(360,40000,"linear");
-
-
-
+   	assetsLoader.gearElt1.animateRotate(360,40000,"linear");
+   	assetsLoader.gearElt2.animateRotate(360,40000,"linear");
 	//gearElt2.css({transform: "rotate(" + 360 + "deg)"});
 }
 
