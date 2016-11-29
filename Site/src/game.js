@@ -62,7 +62,7 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 */
 //VAR GLOBAL
 var AssetsLoaded = false;
-
+var AssetsLoader;
 $.fn.animateRotate = function(angle, duration, easing, complete) {
   return this.each(function() {
     var $elem = $(this);
@@ -87,43 +87,26 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
   });
 };
 function roundingGear(){
-	var gearElt1 = $("#gear-icon-1");
-	var gearElt2 = $("#gear-icon-2");
+	AssetsLoader.gearElt1 = $("#gear-icon-1");
+	AssetsLoader.gearElt2 = $("#gear-icon-2");
 
  	var $elem = $('#gear-icon-1');
  	var angle = 360;
-   	gearElt1.animateRotate(360,40000,"linear");
-   	gearElt2.animateRotate(360,40000,"linear");
+   	AssetsLoader.gearElt1.animateRotate(360,40000,"linear");
+   	AssetsLoader.gearElt2.animateRotate(360,40000,"linear");
 
 
 
 	//gearElt2.css({transform: "rotate(" + 360 + "deg)"});
 }
 
-function preload(){
+roundingGear();
 
-	var isLoaded = 0;
-	var imgElts = document.querySelectorAll("#container img");
-
-	roundingGear();
-
-	console.log("NOMBRE D IMAGE: " + imgElts.length);
-	for(i=0; i < imgElts.length; i++){
-		imgElts[i].addEventListener("load", function(){
-			isLoaded++;
-			console.log("IMAGE CHARGEE : " + isLoaded)
-			if(isLoaded ==imgElts.length){
-				console.log("loaded");
-				init()
-			}
-		});
-	}
-	
-}
+document.addEventListener("DOMContentLoaded", function(){
+	console.log("loaded");
+	AssetsLoaded = true;
+});
 function init()
 {
 	
-   	AssetsLoaded=true;
 }
-
-preload();

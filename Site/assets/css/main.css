@@ -10,12 +10,12 @@
     z-index: 9999;
     background-color: #FFF;
     transition: background-color .5s linear;
-    visibility: visible
+    visibility: visible;
+    padding: 0 43%;
 }
 
 #loader img{
 	display: block;
-    margin: auto;
     font-size: 10px;
     position: relative;
     top: 40%;
