@@ -109,14 +109,15 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 function init()
 {
-	var styleGear = getComputedStyle(document.getElementById("gear-icon-2"));
-	var widthGear = parseInt(styleGear.width);
-	var styleBody = getComputedStyle(document.querySelector("#loader"));
-	var widthBody = parseInt(styleBody.width);
+	var widthGear = assetsLoader.gearElt2.outerWidth();
+	var widthLoader = document.getElementById("loader").clientWidth;
+	var styleLoader = getComputedStyle(document.getElementById("loader"));
+	var paddingSideLoader = styleLoader.getPropertyValue("padding-left");
 
-	var xLimit = (widthBody - 100) - widthGear;
+	var xLimit = parseInt(widthLoader) - parseInt(paddingSideLoader) * 2;
+	xLimit -= parseInt(widthGear) * 2;
 
-	console.log(widthBody + " | " + widthGear);
+	console.log(xLimit);
 
 	assetsLoader.gearElt1.animate({left: 0}, 1000);
 	assetsLoader.gearElt2.animate({left: xLimit}, 1000);

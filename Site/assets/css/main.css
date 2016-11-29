@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+#container{
+	display: none;
+}
+
 #loader img{
 	display: inline-block;
     font-size: 10px;
