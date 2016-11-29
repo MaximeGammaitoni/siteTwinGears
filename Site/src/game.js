@@ -60,17 +60,44 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 	}
 }
 */
+//VAR GLOBAL
+var AssetsLoaded = false;
 
+$.fn.animateRotate = function(angle, duration, easing, complete) {
+  return this.each(function() {
+    var $elem = $(this);
+   	
+    $({deg: 0}).animate({deg: angle}, {
+      duration: duration,
+      easing: easing,
+      canRotate : true,
+
+      step: function(now) {
+        if(!AssetsLoaded)
+        	$elem.css({
+          		transform: 'rotate(' + now*5 + 'deg)'
+         	});
+        else
+        	$elem.css({
+          		transform: 'rotate(' + 0 + 'deg)'
+         	});
+      },
+      complete: complete || $.noop
+    });
+  });
+};
 function roundingGear(){
 	var gearElt1 = $("#gear-icon-1");
 	var gearElt2 = $("#gear-icon-2");
 
-	var 
+ 	var $elem = $('#gear-icon-1');
+ 	var angle = 360;
+   	gearElt1.animateRotate(360,40000,"linear");
+   	gearElt2.animateRotate(360,40000,"linear");
 
-	console.log("hello");
 
-	gearElt1.css({transform: "rotate(" + 360 + "deg)"});
-	gearElt2.css({transform: "rotate(" + 360 + "deg)"});
+
+	//gearElt2.css({transform: "rotate(" + 360 + "deg)"});
 }
 
 function preload(){
@@ -96,6 +123,7 @@ function preload(){
 function init()
 {
 	
+   	AssetsLoaded=true;
 }
 
 preload();
