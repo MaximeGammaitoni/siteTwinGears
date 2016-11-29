@@ -11,10 +11,12 @@
     background-color: #FFF;
     transition: background-color .5s linear;
     visibility: visible;
+    padding: 0 50px;
+    box-sizing: border-box;
 }
 
 #loader img{
-	display: block;
+	display: inline-block;
     font-size: 10px;
     position: relative;
     top: 40%;

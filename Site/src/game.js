@@ -104,9 +104,20 @@ roundingGear();
 
 document.addEventListener("DOMContentLoaded", function(){
 	console.log("loaded");
-	AssetsLoaded = true;
+	assetsLoaded = true;
+	init();
 });
 function init()
 {
-	
+	var styleGear = getComputedStyle(document.getElementById("gear-icon-2"));
+	var widthGear = parseInt(styleGear.width);
+	var styleBody = getComputedStyle(document.querySelector("#loader"));
+	var widthBody = parseInt(styleBody.width);
+
+	var xLimit = (widthBody - 100) - widthGear;
+
+	console.log(widthBody + " | " + widthGear);
+
+	assetsLoader.gearElt1.animate({left: 0}, 1000);
+	assetsLoader.gearElt2.animate({left: xLimit}, 1000);
 }
