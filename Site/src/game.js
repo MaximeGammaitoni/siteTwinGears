@@ -61,8 +61,13 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 }
 */
 //VAR GLOBAL
+
+var AssetsLoader = function() {
+  	this.tru = true;
+};
+
 var AssetsLoaded = false;
-var AssetsLoader;
+var assetsLoader = new AssetsLoader();
 $.fn.animateRotate = function(angle, duration, easing, complete) {
   return this.each(function() {
     var $elem = $(this);
