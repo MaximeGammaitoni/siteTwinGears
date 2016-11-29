@@ -19,18 +19,8 @@
     font-size: 10px;
     position: relative;
     top: 40%;
-    animation: 4s rounding linear infinite;
 }
 
 #loader img:last-of-type{
 	margin-top: -150px;
-}
-
-@keyframes rounding{
-	from{
-		transform: rotate(0deg);
-	}
-	to{
-		transform: rotate(360deg);
-	}
 }

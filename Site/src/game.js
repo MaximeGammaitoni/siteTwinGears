@@ -61,11 +61,25 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 }
 */
 
+function roundingGear(){
+	var gearElt1 = $("#gear-icon-1");
+	var gearElt2 = $("#gear-icon-2");
+
+	var 
+
+	console.log("hello");
+
+	gearElt1.css({transform: "rotate(" + 360 + "deg)"});
+	gearElt2.css({transform: "rotate(" + 360 + "deg)"});
+}
 
 function preload(){
-	
+
 	var isLoaded = 0;
 	var imgElts = document.querySelectorAll("#container img");
+
+	roundingGear();
+
 	console.log("NOMBRE D IMAGE: " + imgElts.length);
 	for(i=0; i < imgElts.length; i++){
 		imgElts[i].addEventListener("load", function(){
@@ -76,13 +90,12 @@ function preload(){
 				init()
 			}
 		});
-			
 	}
 	
 }
 function init()
 {
-
+	
 }
 
 preload();
