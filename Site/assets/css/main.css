@@ -89,13 +89,13 @@
 /** Gear-Icon-1 -> loaded -> décalage **/
 #loader .container #twin-icon-1.loaded-1{
 	left: 0%;
-	animation: 4s rounding linear 1;
+	animation: 3s rounding linear 1;
 }
 
 /** Gear-Icon-2 -> loaded -> décalage **/
 #loader .container #twin-icon-2.loaded-2{
 	right: 0%;
-	animation: 4s rounding linear 1;
+	animation: 3s rounding linear 1;
 }
 /** Twin-Gears -> loaded -> apparition **/
 #loader .container #twin-gears.loaded{
