@@ -21,8 +21,7 @@
         <style>
             a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
         </style>
-        <script src="utils/jquery-3.1.0.min.js"></script>
-        <script src="utils/jquery-ui.js"></script>
+        <script src="utils/jquery-2.2.3.min.js"></script>
     </head>
     <body>
 
@@ -30,10 +29,48 @@
             <p class="browserupgrade">Vous utilisez un navigateur <strong>dépassé</strong>. S'il vous plaît <a href="http://browsehappy.com/">mettez à jour votre navigateur</a> afin d'améliorer votre expérience.</p>
         <![endif]-->
 
+
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function(){
+
+                var gearIcon1 = document.getElementById("twin-icon-1");
+                var gearIcon2 = document.getElementById("twin-icon-2");
+                var twinGears = document.getElementById("twin-gears");
+                var twinGearsText = document.getElementById("twin-gears-txt");
+                var loader = document.getElementById("loader");
+
+                setTimeout(function(){
+                    gearIcon1.className = "loaded-1";
+                    gearIcon2.className = "loaded-2";
+                    twinGears.className = "loaded";
+                    twinGearsText.className = "loaded";
+                    loader.className = "loaded";
+                    setTimeout(function(){
+                        document.getElementById("loader").style.display = "none";
+                    }, 4500)
+                }, 1500)
+            });
+        </script>
+
+        <!-- ******* LOADER ******* -->
         <div id="loader">
-            <img src="assets/img/gear.png" id="gear-icon-1" height="150px" width="150px" >
-            <img src="assets/img/gear.png" id="gear-icon-2" height="150px" width="150px" >
+            <div class="container">
+
+                <div id="twin-icon-1" class="on-load"></div>
+
+                <div id="twin-gears">
+                    <strong id="twin-gears-txt">TWIN GEARS STUDIO</strong>
+                </div>
+
+                <div id="twin-icon-2" class="on-load"></div>
+
+                <div class="clearfix"></div>
+
+            </div>
+            </div>
         </div>
+
+        <!-- ******* CONTENT ***** -->
         <div id = "container">
             <img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png"><img src="http://steven-perini.fr/img/steven.png">
         </div>

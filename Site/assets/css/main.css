@@ -1,3 +1,15 @@
+/*** UTILS ***/
+.clearfix{
+	display: block;
+	clear: both;
+}
+
+#container{
+	display: none;
+}
+
+/*** ---- LOADER ---- ***/
+
 #loader{
     font-size: 2em;
     position: fixed;
@@ -8,25 +20,94 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: #FFF;
-    transition: background-color .5s linear;
-    visibility: visible;
-    padding: 0 50px;
     box-sizing: border-box;
+    opacity: 1;
+    transition: 0.5s opacity linear 3s;
 }
 
-#container{
-	display: none;
+#loader .container{
+	display: block;
+	width: 900px;
+	margin: auto;
+	height: 100%;
+	background-color: #eee;
+	position: relative;
+	transition: 1s padding-top linear 1s;
+	overflow: hidden;
+	padding-top: 20%;
 }
 
-#loader img{
-	display: inline-block;
-    font-size: 10px;
-    position: relative;
-    top: 40%;
-    left: 43%;
+#loader .container div{
+	float: left;
 }
 
-#loader img:last-of-type{
-	margin-top: -150px;
+#twin-gears{
+	width: 100%;
+	text-align: center;
+	font-size: 1.5em;
+	padding-top: 50px;
+	visibility: hidden;
+	transition: 0.5s visibility linear 1s;
+}
+
+#twin-gears-txt{
+	opacity: 0;
+	transition: 1s opacity linear 1.5s
+}
+
+#twin-icon-1,
+#twin-icon-2{
+	width: 150px;
+	height: 150px;
+	background-image: url('../img/gear.png');
+	background-size: contain;
+	background-position: center;
+	position: absolute;
+}
+
+#twin-icon-1{
+	left: 43%;
+	transition: 1.5s left linear;
+}
+
+#twin-icon-2{
+	right: 40.5%;
+	transition: 1.5s right linear;
+}
+
+/** Gear-Icon -> on load -> animation roue qui tourne **/
+#twin-icon-1.on-load,
+#twin-icon-2.on-load{
+	animation: 4s rounding linear infinite;
+}
+
+@keyframes rounding{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
+
+/** Gear-Icon-1 -> loaded -> décalage **/
+#loader .container #twin-icon-1.loaded-1{
+	left: 0%;
+	animation: 4s rounding linear 1;
+}
+
+/** Gear-Icon-2 -> loaded -> décalage **/
+#loader .container #twin-icon-2.loaded-2{
+	right: 0%;
+	animation: 4s rounding linear 1;
+}
+/** Twin-Gears -> loaded -> apparition **/
+#loader .container #twin-gears.loaded{
+	visibility: visible;
+}
+
+/** Twin-Gears -> loaded -> apparition **/
+#twin-gears-txt.loaded{
+	opacity: 1;
+}
+
+/** Loader -> disparition une fois loaded et animation terminé **/
+#loader.loaded{
+	opacity: 0;
 }

@@ -62,7 +62,7 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 */
 //VAR GLOBAL
 
-var AssetsLoader = function() {
+/*var AssetsLoader = function() {
   	this.gearElt1 = $("#gear-icon-1");
 	this.gearElt2 = $("#gear-icon-2");
 };
@@ -121,4 +121,4 @@ function init()
 
 	assetsLoader.gearElt1.animate({left: 0}, 1000);
 	assetsLoader.gearElt2.animate({left: xLimit}, 1000);
-}
+}*/
