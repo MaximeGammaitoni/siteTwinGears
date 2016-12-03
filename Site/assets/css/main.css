@@ -107,7 +107,7 @@
 	opacity: 1;
 }
 
-/** Loader -> disparition une fois loaded et animation terminé **/
+/** Loader -> disparition une fois loaded et animation terminée **/
 #loader.loaded{
 	opacity: 0;
 }
