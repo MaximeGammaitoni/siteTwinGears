@@ -132,8 +132,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var twinGearsTextElt = document.getElementById("twin-gears-txt");
     var loader = document.getElementById("loader");
     var loaderContainer = document.querySelector("#loader .container");
-    var hamburgerLeftElt = document.querySelector("#hamburger-left");
-    var hamburgerRightElt = document.querySelector("#hamburger-right");
+    var hamburgerLeftElt = $("#hamburger-left");
+    var hamburgerRightElt = $("#hamburger-right");
     var hamburgerLeft = $("#hamburger-left button");
     var hamburgerRight = $("#hamburger-right button");
 
@@ -146,15 +146,18 @@ document.addEventListener("DOMContentLoaded", function(){
         setTimeout(function(){
             loaderContainer.className = "container loaded";},2500);
         setTimeout(function(){
-        	hamburgerRightElt.style.display = "block";
-        	hamburgerLeftElt.style.display = "block";
+        	hamburgerRightElt.addClass("loaded");
+        	hamburgerLeftElt.addClass("loaded");
         }, 4500);
     }, 1500)
 
     hamburgerLeft.on("click", function(){
     	if(hamburgerLeft.hasClass("is-active")){
     		hamburgerLeft.removeClass("is-active");
-    	} else{
+    	} else if(hamburgerRight.hasClass("is-active")){
+    		hamburgerRight.removeClass("is-active");
+    		hamburgerLeft.addClass("is-active");
+    	}else{
     		hamburgerLeft.addClass("is-active");
     	}
     })
@@ -162,7 +165,11 @@ document.addEventListener("DOMContentLoaded", function(){
     hamburgerRight.on("click", function(){
     	if(hamburgerRight.hasClass("is-active")){
     		hamburgerRight.removeClass("is-active");
-    	} else{
+    	}else if(hamburgerLeft.hasClass("is-active")){
+    		hamburgerLeft.removeClass("is-active");
+    		hamburgerRight.addClass("is-active");
+    	} 
+    	else{
     		hamburgerRight.addClass("is-active");
     	}
     })
