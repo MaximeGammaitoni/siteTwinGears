@@ -124,7 +124,7 @@ function init()
 }*/
 
 
-document.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("load", function(){
 
     var gearLeftElt = document.getElementById("twin-icon-1");
     var gearRightElt = document.getElementById("twin-icon-2");

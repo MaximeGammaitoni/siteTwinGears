@@ -40,7 +40,7 @@ button:focus, button:active{
 	border: 12px ridge grey;
 	/**background-color: #eee;**/
 	position: relative;
-	transition: 1s padding-top linear 1s;
+	transition: 1s padding-top ease-out 1s;
 	overflow: hidden;
 	padding-top: 20%;
 	box-sizing: border-box;
@@ -89,6 +89,11 @@ button:focus, button:active{
 #twin-icon-1,
 #twin-icon-2{
 	animation: 4s rounding linear infinite;
+}
+
+#twin-icon-1.loaded:hover,
+#twin-icon-2.loaded:hover{
+	animation-play-state: paused;
 }
 
 @keyframes rounding{
@@ -143,16 +148,15 @@ button:focus, button:active{
 
 #hamburger-left{
 	position: absolute;
-	top: 45px;
-	left: 3.5%;
 	z-index: 9999;
 	opacity: 0;
+	display: none;
+	transition: 1s opacity ease-out;
 }
 
 #hamburger-right{
 	position: absolute;
-	top: 45px;
-	right: 3.5%;
+	right: 0%;
 	z-index: 9999;
 	opacity: 0;
 	display: none;
