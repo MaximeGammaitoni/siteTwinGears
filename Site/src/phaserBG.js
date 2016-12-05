@@ -1,4 +1,3 @@
-Variable Global
 var game;
 window.onload =init()
 function init()
@@ -7,38 +6,70 @@ function init()
 	var width="100%";
 	var game = new Phaser.Game(width, height, Phaser.CANVAS, "canvas", {preload: preload, create: create, update: update});
 	
-	/*window.addEventListener("resize", function(){
-		var height=window.innerHeight;
-		var width=window.innerWidth;
-		game.width = width;
-		game.height = height;
-	});
 
 	//PUBLIC SPRITE
 	
 	function preload()
 	{ 
-		game.load.image("gearIcon","assets/img/gear.png")//creation de l'image avec l'id "gearIcon" et son url.
 		
-		console.log("preload OK");
 	}
 	function create()
 	{
-		game.stage.backgroundColor = "#4488AA"; // change la couleur de fond du canvas
-		game.gearIcon= game.add.sprite(window.innerWidth/2,window.innerHeight/2,"gearIcon");//ajout de l'image avec l'id gearIcon
-		game.gearIcon.anchor.x=0.5;
-		game.gearIcon.anchor.y=0.5;
-		adjustImageToScreenSize(gearIcon,0.5,true,0.25);
-		//gearIcon.scale.x = 1 +(window.innerWidth / 50 *100); 
-		console.log(gearIcon.width * (window.innerWidth/2));
+		game.stage.backgroundColor = "#4488AA";
+		var graphics = game.add.graphics(100, 100);
+
+    // set a fill and line style
+    graphics.beginFill(0xFF3300);
+    graphics.lineStyle(10, 0xffd900, 1);
+    
+    // draw a shape
+    graphics.moveTo(50,50);
+    graphics.lineTo(250, 50);
+    graphics.lineTo(100, 100);
+    graphics.lineTo(250, 220);
+    graphics.lineTo(50, 220);
+    graphics.lineTo(50, 50);
+    graphics.endFill();
+    
+    // set a fill and line style again
+    graphics.lineStyle(10, 0xFF0000, 0.8);
+    graphics.beginFill(0xFF700B, 1);
+    
+    // draw a second shape
+    graphics.moveTo(210,300);
+    graphics.lineTo(450,320);
+    graphics.lineTo(570,350);
+    graphics.quadraticCurveTo(600, 0, 480,100);
+    graphics.lineTo(330,120);
+    graphics.lineTo(410,200);
+    graphics.lineTo(210,300);
+    graphics.endFill();
+    
+    // draw a rectangle
+    graphics.lineStyle(2, 0x0000FF, 1);
+    graphics.drawRect(50, 250, 100, 100);
+    
+    // draw a circle
+    graphics.lineStyle(0);
+    graphics.beginFill(0xFFFF0B, 0.5);
+    graphics.drawCircle(470, 200, 200);
+    graphics.endFill();
+
+    graphics.lineStyle(20, 0x33FF00);
+    graphics.moveTo(30,30);
+    graphics.lineTo(600, 300);
+
+    window.graphics = graphics;
+
+
 	}
 	function update()
 	{
-		gearIcon.angle+= game.time.elapsedMS /10; 
+		
 	}
 }
 //Reajustement de l'image en fonction de la taille de l'ecran ----------
-function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) // (image etant l'instance de l'objet Sprite par exemple gearIcon, screenRatio et le reajustement entre 0 et 1, isCircle est un boléan utiliser si la hauteur de l'image et egale a la largeur si ca n'est pas le cas il faudra utiliser le parametre screenRatioY pour reajuste la taille de l'image en hauteur)
+/*function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) // (image etant l'instance de l'objet Sprite par exemple gearIcon, screenRatio et le reajustement entre 0 et 1, isCircle est un boléan utiliser si la hauteur de l'image et egale a la largeur si ca n'est pas le cas il faudra utiliser le parametre screenRatioY pour reajuste la taille de l'image en hauteur)
 {
 	if(isCircle)
 	{
@@ -57,5 +88,5 @@ function adjustImageToScreenSize(image , screenRatio , isCircle , screenRatioY) 
 	{
 		image.width = window.innerWidth*screenRatio;
 		image.height =window.innerHeight*screenRatioY;
-	}*/
-}
+	}
+}*/

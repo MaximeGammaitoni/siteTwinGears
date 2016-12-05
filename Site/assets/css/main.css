@@ -1,4 +1,7 @@
 /*** UTILS ***/
+#canvas{
+	position: fixed;
+}
 .clearfix{
 	display: block;
 	clear: both;
@@ -34,11 +37,13 @@ button:focus, button:active{
 	width: 1200px;
 	margin: auto;
 	height: 100%;
-	background-color: #eee;
+	border: 12px ridge grey;
+	/**background-color: #eee;**/
 	position: relative;
 	transition: 1s padding-top linear 1s;
 	overflow: hidden;
 	padding-top: 20%;
+	box-sizing: border-box;
 }
 
 #loader .container div{
