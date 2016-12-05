@@ -132,6 +132,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var twinGearsTextElt = document.getElementById("twin-gears-txt");
     var loader = document.getElementById("loader");
     var loaderContainer = document.querySelector("#loader .container");
+    var hamburgerLeftElt = document.querySelector("#hamburger-left");
+    var hamburgerRightElt = document.querySelector("#hamburger-right");
     var hamburgerLeft = $("#hamburger-left button");
     var hamburgerRight = $("#hamburger-right button");
 
@@ -142,7 +144,11 @@ document.addEventListener("DOMContentLoaded", function(){
         twinGearsTextElt.className = "loaded";
         loader.className = "loaded";
         setTimeout(function(){
-            loaderContainer.className = "container loaded"}, 2500);
+            loaderContainer.className = "container loaded";},2500);
+        setTimeout(function(){
+        	hamburgerRightElt.style.display = "block";
+        	hamburgerLeftElt.style.display = "block";
+        }, 4500);
     }, 1500)
 
     hamburgerLeft.on("click", function(){

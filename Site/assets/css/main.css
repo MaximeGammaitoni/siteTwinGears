@@ -138,14 +138,16 @@ button:focus, button:active{
 
 #hamburger-left{
 	position: absolute;
-	top: 13%;
+	top: 45px;
 	left: 3.5%;
 	z-index: 9999;
+	display: none;
 }
 
 #hamburger-right{
 	position: absolute;
-	top: 13%;
+	top: 45px;
 	right: 3.5%;
 	z-index: 9999;
+	display: none;
 }
