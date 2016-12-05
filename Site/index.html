@@ -8,6 +8,7 @@
         <link rel="apple-touch-icon" href="assets/img/twin-gear.jpg">
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/twin-gear.jpg" />
         <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/hamburgers.css">
         <meta name="author" content="Maxime Gammaitoni" />
         <link rel="author" href="">
         <meta name="description" content="We are french developement studio based in Luxembourg, let's follow us and take a look on our new games!" />
@@ -29,32 +30,31 @@
             <p class="browserupgrade">Vous utilisez un navigateur <strong>dépassé</strong>. S'il vous plaît <a href="http://browsehappy.com/">mettez à jour votre navigateur</a> afin d'améliorer votre expérience.</p>
         <![endif]-->
 
-
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", function(){
-
-                var gearIcon1 = document.getElementById("twin-icon-1");
-                var gearIcon2 = document.getElementById("twin-icon-2");
-                var twinGears = document.getElementById("twin-gears");
-                var twinGearsText = document.getElementById("twin-gears-txt");
-                var loader = document.getElementById("loader");
-
-                setTimeout(function(){
-                    gearIcon1.className = "loaded-1";
-                    gearIcon2.className = "loaded-2";
-                    twinGears.className = "loaded";
-                    twinGearsText.className = "loaded";
-                    loader.className = "loaded";
-                    setTimeout(function(){
-                        document.getElementById("loader").style.display = "none";
-                    }, 4500)
-                }, 1500)
-            });
-        </script>
-
         <!-- ******* LOADER ******* -->
         <div id="loader">
             <div class="container">
+
+
+                <div id="hamburger-left">
+                    <button class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                            <span id="hamburger-inner2"></span>
+                            <span id="hamburger-inner3"></span>
+                        </span>
+                    </button>
+                </div>
+
+
+                <div id="hamburger-right">
+                    <button class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                            <span id="hamburger-inner2"></span>
+                            <span id="hamburger-inner3"></span>
+                        </span>
+                    </button>
+                </div>
 
                 <div id="twin-icon-1" class="on-load"></div>
 

@@ -122,3 +122,42 @@ function init()
 	assetsLoader.gearElt1.animate({left: 0}, 1000);
 	assetsLoader.gearElt2.animate({left: xLimit}, 1000);
 }*/
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    var gearLeftElt = document.getElementById("twin-icon-1");
+    var gearRightElt = document.getElementById("twin-icon-2");
+    var twinGearsElt = document.getElementById("twin-gears");
+    var twinGearsTextElt = document.getElementById("twin-gears-txt");
+    var loader = document.getElementById("loader");
+    var loaderContainer = document.querySelector("#loader .container");
+    var hamburgerLeft = $("#hamburger-left button");
+    var hamburgerRight = $("#hamburger-right button");
+
+    setTimeout(function(){
+        gearLeftElt.className = "loaded-1";
+        gearRightElt.className = "loaded-2";
+        twinGearsElt.className = "loaded";
+        twinGearsTextElt.className = "loaded";
+        loader.className = "loaded";
+        setTimeout(function(){
+            loaderContainer.className = "container loaded"}, 2500);
+    }, 1500)
+
+    hamburgerLeft.on("click", function(){
+    	if(hamburgerLeft.hasClass("is-active")){
+    		hamburgerLeft.removeClass("is-active");
+    	} else{
+    		hamburgerLeft.addClass("is-active");
+    	}
+    })
+
+    hamburgerRight.on("click", function(){
+    	if(hamburgerRight.hasClass("is-active")){
+    		hamburgerRight.removeClass("is-active");
+    	} else{
+    		hamburgerRight.addClass("is-active");
+    	}
+    })
+});
